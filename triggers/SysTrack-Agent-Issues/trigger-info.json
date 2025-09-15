@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  3,
+    "systemsAffected":  70,
+    "remediationScript":  "Fix-SysTrackAgentIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "SysTrack agent service and communication issues",
+    "detectionScript":  "Detect-SysTrackAgentIssues.ps1",
+    "priority":  "CRITICAL",
+    "triggerName":  "SysTrack-Agent-Issues"
+}

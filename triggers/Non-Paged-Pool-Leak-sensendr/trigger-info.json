@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  42,
+    "systemsAffected":  436,
+    "remediationScript":  "Fix-NonPagedPoolLeakSensendr.ps1",
+    "hasExistingScript":  false,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Non-paged pool memory leak in sensendr.exe process",
+    "detectionScript":  "Detect-NonPagedPoolLeakSensendr.ps1",
+    "priority":  "CRITICAL",
+    "triggerName":  "Non-Paged-Pool-Leak-sensendr"
+}

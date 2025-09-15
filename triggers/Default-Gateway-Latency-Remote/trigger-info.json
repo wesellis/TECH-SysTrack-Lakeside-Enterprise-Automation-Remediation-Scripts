@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  34,
+    "systemsAffected":  352,
+    "remediationScript":  "Fix-DefaultGatewayLatencyRemote.ps1",
+    "hasExistingScript":  false,
+    "lastUpdated":  "2025-06-30",
+    "description":  "High latency to default gateway affecting network performance",
+    "detectionScript":  "Detect-DefaultGatewayLatencyRemote.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "Default-Gateway-Latency-Remote"
+}

@@ -1,0 +1,32 @@
+{
+    "triggerName": "Qualys-Cloud-Agent-Stopped",
+    "description": "Qualys Cloud Agent service failure affecting security scanning",
+    "priority": "CRITICAL",
+    "systemsAffected": 25,
+    "impactPercentage": 88,
+    "templateType": "Service",
+    "detectionScript": "Detect-QualysCloudAgentStopped.ps1",
+    "remediationScript": "Fix-QualysCloudAgentStopped.ps1",
+    "created": "2025-07-01 12:05:00",
+    "version": "1.0",
+    "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+    "businessImpact": {
+        "category": "Security",
+        "severity": "Critical",
+        "affectedServices": ["Vulnerability Scanning", "Compliance Monitoring", "Security Assessment"],
+        "downtime": "High",
+        "userImpact": "Security scanning disabled, compliance at risk"
+    },
+    "technicalDetails": {
+        "targetServices": ["QualysAgent", "Qualys Cloud Agent", "QualysCloudAgent"],
+        "diagnosticChecks": ["Service Status", "Cloud Connectivity", "Configuration", "Log Activity"],
+        "remediationActions": ["Service Restart", "Cloud Check-in", "Cache Clear", "Connectivity Test"],
+        "validationTests": ["Service Status Check", "Process Health", "Log Activity"]
+    },
+    "deployment": {
+        "testingRequired": true,
+        "rollbackPlan": "Service state backup and restore",
+        "monitoringDuration": "24 hours",
+        "successCriteria": "Vulnerability scanning operational"
+    }
+}

@@ -1,0 +1,97 @@
+{
+  "triggerName": "CiscoAnyConnect-Service-Stopped",
+  "description": "Cisco AnyConnect VPN service failure preventing remote access",
+  "priority": "CRITICAL",
+  "systemsAffected": 120,
+  "impactPercentage": 65,
+  "templateType": "Service",
+  "detectionScript": "Detect-CiscoAnyConnectServiceStopped.ps1",
+  "remediationScript": "Fix-CiscoAnyConnectServiceStopped.ps1",
+  "created": "2025-07-01 12:15:00",
+  "version": "1.0",
+  "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+  "businessImpact": "Remote access VPN connectivity lost",
+  "serviceNames": [
+    "vpnagent",
+    "csc_vpnagent",
+    "vpnui",
+    "CSCAgentSvc",
+    "acsock",
+    "acmon",
+    "acwebsecagent"
+  ],
+  "technicalDetails": {
+    "affectedSystems": "Windows systems with Cisco AnyConnect VPN client installed",
+    "symptoms": [
+      "Cannot establish VPN connections",
+      "AnyConnect client fails to start",
+      "VPN service appears stopped",
+      "Network connectivity issues when remote",
+      "Authentication failures"
+    ],
+    "rootCauses": [
+      "VPN service stopped or crashed",
+      "Service startup type changed to disabled",
+      "Network adapter driver issues",
+      "Certificate expiration or corruption",
+      "Firewall blocking VPN traffic",
+      "Windows updates affecting VPN functionality",
+      "AnyConnect client corruption"
+    ],
+    "businessConsequences": [
+      "Remote workers cannot access corporate network",
+      "Loss of secure connectivity for mobile users",
+      "Productivity loss for distributed workforce",
+      "Potential security exposure with alternative connections",
+      "Business continuity disruption",
+      "Support ticket escalation"
+    ]
+  },
+  "detectionMethods": [
+    "VPN service status verification",
+    "AnyConnect installation validation",
+    "Network adapter health check",
+    "VPN profile configuration verification",
+    "Firewall rule validation",
+    "Certificate validity check"
+  ],
+  "remediationActions": [
+    "VPN service restart and configuration",
+    "Service startup type correction",
+    "Network adapter reset and optimization",
+    "Firewall rule verification and repair",
+    "VPN client cache clearing",
+    "Dependent service restart",
+    "Network stack reset if needed"
+  ],
+  "verificationSteps": [
+    "Confirm VPN services running",
+    "Test VPN connection establishment",
+    "Verify network connectivity through tunnel",
+    "Validate access to corporate resources",
+    "Monitor connection stability"
+  ],
+  "userImpact": {
+    "severity": "HIGH",
+    "affectedUserGroups": [
+      "Remote workers",
+      "Mobile users",
+      "Field technicians",
+      "Sales teams",
+      "Management traveling"
+    ],
+    "businessProcesses": [
+      "Remote access to corporate applications",
+      "Secure file sharing and collaboration",
+      "Email and communication access",
+      "Database and system administration",
+      "Customer support activities"
+    ]
+  },
+  "scheduledMaintenance": {
+    "detectionFrequency": "Every 2 hours",
+    "remediationTrigger": "Automatic on detection",
+    "healthCheckInterval": "Every 4 hours",
+    "reportingCadence": "Daily summary with weekly trends"
+  }
+}

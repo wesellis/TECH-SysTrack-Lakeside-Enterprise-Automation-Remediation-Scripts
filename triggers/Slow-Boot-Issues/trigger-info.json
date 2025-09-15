@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  9,
+    "systemsAffected":  200,
+    "remediationScript":  "Fix-SlowBootIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Slow system startup and boot optimization",
+    "detectionScript":  "Detect-SlowBootIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "Slow-Boot-Issues"
+}

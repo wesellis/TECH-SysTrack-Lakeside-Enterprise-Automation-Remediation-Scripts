@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  47,
+    "systemsAffected":  1062,
+    "remediationScript":  "Fix-AzureADPasswordExpiration.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Azure AD password expiration notifications and management",
+    "detectionScript":  "Detect-AzureADPasswordExpiration.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "Azure-AD-Password-Expiration"
+}

@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  22,
+    "systemsAffected":  500,
+    "remediationScript":  "Fix-MemoryLeaks.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Memory leaks across various processes",
+    "detectionScript":  "Detect-MemoryLeaks.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "Memory-Leaks"
+}

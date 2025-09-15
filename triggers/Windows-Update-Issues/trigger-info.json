@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  7,
+    "systemsAffected":  150,
+    "remediationScript":  "Fix-WindowsUpdateIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Windows Update service failures and installation issues",
+    "detectionScript":  "Detect-WindowsUpdateIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "Windows-Update-Issues"
+}

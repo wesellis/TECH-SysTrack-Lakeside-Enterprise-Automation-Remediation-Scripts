@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  18,
+    "systemsAffected":  400,
+    "remediationScript":  "Fix-HighCPUUsage.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Sustained high CPU usage patterns",
+    "detectionScript":  "Detect-HighCPUUsage.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "High-CPU-Usage"
+}

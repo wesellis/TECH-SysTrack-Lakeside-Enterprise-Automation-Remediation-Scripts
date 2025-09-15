@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  5,
+    "systemsAffected":  120,
+    "remediationScript":  "Fix-PrinterIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Printer driver and spooler service issues",
+    "detectionScript":  "Detect-PrinterIssues.ps1",
+    "priority":  "LOW",
+    "triggerName":  "Printer-Issues"
+}

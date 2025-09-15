@@ -1,0 +1,30 @@
+﻿# Logs
+logs/
+*.log
+
+# Credentials and secrets
+security/credentials/*
+config/environments/production.json
+config/environments/staging.json
+*.key
+*.pfx
+
+# PowerShell
+*.ps1.bak
+profile.ps1
+
+# Temporary files
+temp/
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Test results
+TestResults/
+coverage/

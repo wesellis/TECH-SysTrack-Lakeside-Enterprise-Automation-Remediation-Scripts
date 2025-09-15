@@ -1,0 +1,29 @@
+﻿{
+  "environment": "template",
+  "systrack": {
+    "api_url": "https://your-systrack-server/api",
+    "api_key": "YOUR_API_KEY_HERE",
+    "polling_interval_seconds": 300
+  },
+  "azure_ad": {
+    "tenant_id": "YOUR_TENANT_ID",
+    "client_id": "YOUR_CLIENT_ID", 
+    "client_secret": "YOUR_CLIENT_SECRET"
+  },
+  "automation": {
+    "enable_automatic_remediation": false,
+    "max_concurrent_jobs": 5,
+    "default_timeout_minutes": 30
+  },
+  "notifications": {
+    "email_enabled": true,
+    "teams_webhook": "YOUR_TEAMS_WEBHOOK_URL",
+    "smtp_server": "your-smtp-server.com"
+  },
+  "thresholds": {
+    "cpu_interrupt_warning": 10,
+    "cpu_interrupt_critical": 15,
+    "memory_leak_mb": 500,
+    "response_time_seconds": 300
+  }
+}

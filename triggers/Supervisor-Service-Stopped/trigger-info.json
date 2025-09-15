@@ -1,0 +1,67 @@
+{
+    "triggerName": "Supervisor-Service-Stopped",
+    "description": "SysTrack Supervisor service failure",
+    "priority": "CRITICAL",
+    "systemsAffected": 45,
+    "impactPercentage": 95,
+    "templateType": "Service",
+    "detectionScript": "Detect-SupervisorServiceStopped.ps1",
+    "remediationScript": "Fix-SupervisorServiceStopped.ps1",
+    "created": "2025-07-01 12:00:00",
+    "version": "1.0",
+    "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+    "businessImpact": {
+        "monitoring": "SysTrack data collection stopped",
+        "analytics": "Performance analysis unavailable",
+        "compliance": "Reporting interrupted",
+        "automation": "Trigger detection disabled",
+        "visibility": "IT operational insight lost"
+    },
+    "technicalDetails": {
+        "serviceNames": [
+            "Supervisor",
+            "SysTrack Supervisor",
+            "LakesideSupervisor",
+            "Lakeside Supervisor",
+            "SysTrackSupervisor"
+        ],
+        "dependencies": [
+            "SQL Server services",
+            "Network connectivity",
+            "Windows Event Log"
+        ],
+        "commonCauses": [
+            "Service crash or hang",
+            "Database connectivity loss",
+            "Insufficient system resources",
+            "Windows updates or reboots",
+            "Permission or authentication issues"
+        ]
+    },
+    "automationCapabilities": {
+        "detection": {
+            "serviceStatus": true,
+            "processMonitoring": true,
+            "eventLogAnalysis": true,
+            "configurationValidation": true,
+            "connectivityTesting": true
+        },
+        "remediation": {
+            "serviceRestart": true,
+            "startupTypeCorrection": true,
+            "dependencyChecking": true,
+            "healthVerification": true,
+            "postRemediationTesting": true
+        }
+    },
+    "escalationCriteria": {
+        "manualIntervention": [
+            "Service not found (not installed)",
+            "Service fails to start after multiple attempts",
+            "Persistent service crashes",
+            "Database connectivity issues",
+            "Permission or authentication failures"
+        ],
+        "emergencyContact": "SysTrack Administrator / Lakeside Software Support"
+    }
+}

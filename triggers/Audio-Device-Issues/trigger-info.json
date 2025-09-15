@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  4,
+    "systemsAffected":  100,
+    "remediationScript":  "Fix-AudioDeviceIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Audio device driver and service issues",
+    "detectionScript":  "Detect-AudioDeviceIssues.ps1",
+    "priority":  "LOW",
+    "triggerName":  "Audio-Device-Issues"
+}

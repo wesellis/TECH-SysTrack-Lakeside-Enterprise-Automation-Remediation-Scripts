@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  52,
+    "systemsAffected":  1177,
+    "remediationScript":  "Fix-CiscoAnyConnectAdapter.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Cisco AnyConnect virtual miniport adapter issues",
+    "detectionScript":  "Detect-CiscoAnyConnectAdapter.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "Cisco-AnyConnect-Adapter"
+}

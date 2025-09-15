@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  13,
+    "systemsAffected":  300,
+    "remediationScript":  "Fix-OfficeApplicationIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Microsoft Office application crashes and performance",
+    "detectionScript":  "Detect-OfficeApplicationIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "Office-Application-Issues"
+}

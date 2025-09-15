@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  11,
+    "systemsAffected":  250,
+    "remediationScript":  "Fix-NetworkAdapterIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Network adapter driver and configuration issues",
+    "detectionScript":  "Detect-NetworkAdapterIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "Network-Adapter-Issues"
+}

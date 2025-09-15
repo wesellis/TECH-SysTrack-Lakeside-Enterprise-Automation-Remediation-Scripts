@@ -1,0 +1,15 @@
+{
+  "triggerName": "Certificate-Expiry",
+  "description": "Critical certificate expiration affecting system authentication",
+  "priority": "CRITICAL",
+  "systemsAffected": 45,
+  "impactPercentage": 80,
+  "templateType": "Security", 
+  "detectionScript": "Detect-CertificateExpiry.ps1",
+  "remediationScript": "Fix-CertificateExpiry.ps1",
+  "created": "2025-07-01 12:32:00",
+  "version": "1.0",
+  "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+  "businessImpact": "Authentication and encryption failures",
+  "securityArea": "Certificate Management"
+}

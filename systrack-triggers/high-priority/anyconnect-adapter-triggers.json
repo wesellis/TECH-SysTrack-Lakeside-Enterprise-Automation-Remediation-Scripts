@@ -1,0 +1,35 @@
+﻿{
+  "trigger_name": "anyconnect_adapter_failure",
+  "description": "Cisco AnyConnect Virtual Miniport Adapter issues",
+  "priority": "HIGH",
+  "systems_affected": 1177,
+  "percentage_affected": 52,
+  "business_impact": "HIGH - VPN connectivity loss, remote work disruption",
+  
+  "trigger_conditions": {
+    "primary_metric": "Device Manager Status - Cisco AnyConnect Virtual Miniport Adapter",
+    "failure_states": ["Error", "Disabled", "Unknown"],
+    "check_frequency_minutes": 15,
+    "consecutive_failures": 2
+  },
+  
+  "automation_response": {
+    "immediate_actions": [
+      "Log adapter status and error codes",
+      "Capture network configuration snapshot",
+      "Test basic connectivity"
+    ],
+    "remediation_scripts": [
+      "restart-anyconnect-services.ps1",
+      "reinstall-anyconnect-adapter.ps1",
+      "repair-network-profile.ps1",
+      "validate-vpn-connectivity.ps1"
+    ]
+  },
+  
+  "success_criteria": {
+    "target_resolution_time": "5 minutes",
+    "success_threshold": "Adapter status = Working",
+    "validation_tests": ["Ping gateway", "VPN connection test"]
+  }
+}

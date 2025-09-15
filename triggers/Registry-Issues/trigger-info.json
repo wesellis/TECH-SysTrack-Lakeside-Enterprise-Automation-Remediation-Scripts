@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  8,
+    "systemsAffected":  180,
+    "remediationScript":  "Fix-RegistryIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Windows Registry corruption and optimization",
+    "detectionScript":  "Detect-RegistryIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "Registry-Issues"
+}

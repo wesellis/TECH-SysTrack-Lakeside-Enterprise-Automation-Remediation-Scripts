@@ -1,0 +1,68 @@
+{
+  "triggerName": "InTune-Management-Extension-Stopped",
+  "description": "Microsoft Intune Management Extension service failure affecting device management",
+  "priority": "CRITICAL",
+  "systemsAffected": 65,
+  "impactPercentage": 70,
+  "templateType": "Service",
+  "detectionScript": "Detect-InTuneManagementExtensionStopped.ps1",
+  "remediationScript": "Fix-InTuneManagementExtensionStopped.ps1",
+  "created": "2025-07-01 12:00:00",
+  "version": "1.0",
+  "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+  "businessImpact": "Device management and policy enforcement disabled",
+  "serviceNames": [
+    "Microsoft Intune Management Extension",
+    "IntuneManagementExtension"
+  ],
+  "technicalDetails": {
+    "affectedSystems": "Windows 10/11 enterprise devices enrolled in Microsoft Intune",
+    "symptoms": [
+      "Intune policies not applying",
+      "Software deployment failures",
+      "Device compliance reporting issues",
+      "Management actions not executing"
+    ],
+    "rootCauses": [
+      "Service stopped or crashed",
+      "Service startup type changed",
+      "Azure AD authentication issues",
+      "Network connectivity problems",
+      "Service corruption"
+    ],
+    "businessConsequences": [
+      "Security policies not enforced",
+      "Software updates not deployed",
+      "Device configuration drift",
+      "Compliance reporting gaps",
+      "End-user productivity impact"
+    ]
+  },
+  "detectionMethods": [
+    "Service status verification",
+    "Process existence check",
+    "Registry configuration validation",
+    "Log file activity analysis",
+    "Azure AD connectivity test"
+  ],
+  "remediationActions": [
+    "Service restart and configuration repair",
+    "Startup type correction to Automatic",
+    "Log cleanup and cache clearing",
+    "Policy refresh triggering",
+    "Azure AD re-registration if needed"
+  ],
+  "verificationSteps": [
+    "Confirm service running status",
+    "Verify device check-in to Intune console",
+    "Test policy application",
+    "Monitor compliance reporting",
+    "Validate management actions"
+  ],
+  "scheduledMaintenance": {
+    "detectionFrequency": "Every 4 hours",
+    "remediationTrigger": "Automatic on detection",
+    "healthCheckInterval": "Daily",
+    "reportingCadence": "Weekly summary"
+  }
+}

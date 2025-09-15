@@ -1,0 +1,41 @@
+{
+  "triggerName": "Azure-AD-P2P-Certificate-Failure",
+  "description": "Azure AD P2P certificate authentication failure",
+  "priority": "CRITICAL",
+  "systemsAffected": 85,
+  "impactPercentage": 75,
+  "templateType": "Security",
+  "detectionScript": "Detect-AzureADP2PCertificateFailure.ps1",
+  "remediationScript": "Fix-AzureADP2PCertificateFailure.ps1", 
+  "created": "2025-07-01 12:30:00",
+  "version": "1.0",
+  "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+  "businessImpact": "Azure AD authentication compromised",
+  "securityArea": "Certificate Authentication",
+  "technicalDetails": {
+    "affectedSystems": "Windows systems joined to Azure AD with P2P certificate authentication",
+    "symptoms": [
+      "Azure AD authentication failures",
+      "Certificate validation errors", 
+      "Single sign-on disruption",
+      "Application access denied",
+      "Token acquisition failures"
+    ],
+    "rootCauses": [
+      "P2P certificate expiration",
+      "Certificate corruption or invalid",
+      "Azure AD trust relationship broken",
+      "Certificate store corruption",
+      "Network connectivity to Azure AD",
+      "Time synchronization issues"
+    ],
+    "businessConsequences": [
+      "User authentication failures",
+      "Loss of SSO capabilities",
+      "Application access disruption", 
+      "Productivity loss",
+      "Security exposure",
+      "Support escalation"
+    ]
+  }
+}

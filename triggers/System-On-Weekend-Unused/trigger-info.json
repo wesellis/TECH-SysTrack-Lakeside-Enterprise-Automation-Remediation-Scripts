@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  83,
+    "systemsAffected":  867,
+    "remediationScript":  "Fix-SystemOnWeekendUnused.ps1",
+    "hasExistingScript":  false,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Systems powered on during weekends with no user activity",
+    "detectionScript":  "Detect-SystemOnWeekendUnused.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "System-On-Weekend-Unused"
+}

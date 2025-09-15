@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  22,
+    "systemsAffected":  232,
+    "remediationScript":  "Fix-HealthScoreIssues.ps1",
+    "hasExistingScript":  false,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Systems with poor health scores requiring intervention",
+    "detectionScript":  "Detect-HealthScoreIssues.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "Health-Score-Issues"
+}

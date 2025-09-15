@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  13,
+    "systemsAffected":  300,
+    "remediationScript":  "Fix-DNSResolutionIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "DNS resolution failures and slow lookups",
+    "detectionScript":  "Detect-DNSResolutionIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "DNS-Resolution-Issues"
+}

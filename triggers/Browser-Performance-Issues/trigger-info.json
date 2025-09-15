@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  11,
+    "systemsAffected":  250,
+    "remediationScript":  "Fix-BrowserPerformanceIssues.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "Web browser crashes, hangs, and performance issues",
+    "detectionScript":  "Detect-BrowserPerformanceIssues.ps1",
+    "priority":  "MEDIUM",
+    "triggerName":  "Browser-Performance-Issues"
+}

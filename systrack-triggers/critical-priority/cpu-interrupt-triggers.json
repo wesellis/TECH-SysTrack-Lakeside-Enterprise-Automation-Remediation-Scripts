@@ -1,0 +1,104 @@
+{
+  "trigger_name": "cpu_interrupt_high",
+  "description": "High CPU interrupt percentage causing system performance degradation",
+  "priority": "CRITICAL",
+  "systems_affected": 1857,
+  "percentage_affected": 82,
+  "business_impact": "SEVERE - System freezes, poor user experience, productivity loss",
+  
+  "trigger_conditions": {
+    "primary_metric": "Percentage Interrupt CPU",
+    "threshold_warning": 10,
+    "threshold_critical": 15,
+    "duration_minutes": 5,
+    "consecutive_samples": 3,
+    "business_hours_only": false
+  },
+  
+  "detection_logic": {
+    "systrack_query": "SELECT DeviceName, TimeStamp, InterruptCPUPercent FROM PerformanceData WHERE InterruptCPUPercent > 15 AND TimeStamp > DATEADD(minute, -5, GETDATE())",
+    "additional_checks": [
+      "Validate system responsiveness",
+      "Check for hardware driver issues", 
+      "Verify interrupt storm conditions"
+    ]
+  },
+  
+  "automation_response": {
+    "immediate_actions": [
+      "Log interrupt sources analysis",
+      "Capture system performance snapshot", 
+      "Identify problematic drivers/processes"
+    ],
+    "remediation_scripts": [
+      "analyze-interrupt-sources.ps1",
+      "restart-problematic-drivers.ps1", 
+      "optimize-process-priorities.ps1",
+      "validate-hardware-status.ps1"
+    ],
+    "escalation_conditions": [
+      "Interrupt CPU >25% for >10 minutes",
+      "System becomes unresponsive",
+      "Hardware failure detected",
+      "Multiple automated attempts failed"
+    ]
+  },
+  
+  "success_criteria": {
+    "target_resolution_time": "2 minutes",
+    "success_threshold": "Interrupt CPU <10%",
+    "validation_period": "15 minutes",
+    "automated_resolution_rate": ">85%"
+  },
+  
+  "notification_settings": {
+    "immediate_alerts": ["IT Operations", "System Administrators"],
+    "escalation_alerts": ["IT Management", "Hardware Team"],
+    "user_notifications": false,
+    "notification_methods": ["Email", "Teams", "Dashboard"]
+  },
+  
+  "reporting": {
+    "metrics_tracked": [
+      "Interrupt CPU levels before/after",
+      "Resolution time",
+      "Success rate",
+      "System stability post-fix",
+      "User impact assessment"
+    ],
+    "dashboard_widgets": [
+      "Real-time interrupt levels",
+      "Affected systems map",
+      "Resolution success trends",
+      "Hardware health status"
+    ]
+  },
+  
+  "testing_validation": {
+    "test_scenarios": [
+      "Simulated interrupt storm",
+      "Driver update scenarios", 
+      "Hardware failure conditions",
+      "Business hours vs off-hours response"
+    ],
+    "rollback_procedures": [
+      "Restore previous driver versions",
+      "Reset process priorities",
+      "Manual intervention procedures"
+    ]
+  },
+  
+  "compliance_security": {
+    "change_approval_required": false,
+    "audit_logging": true,
+    "security_impact": "LOW - Performance optimization only",
+    "data_privacy_impact": "NONE"
+  },
+  
+  "maintenance": {
+    "review_frequency": "Weekly",
+    "threshold_tuning": "Monthly based on baseline changes",
+    "script_updates": "As needed for new hardware/drivers",
+    "performance_monitoring": "Continuous"
+  }
+}

@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  82,
+    "systemsAffected":  1857,
+    "remediationScript":  "Fix-CPUInterrupt.ps1",
+    "hasExistingScript":  true,
+    "lastUpdated":  "2025-06-30",
+    "description":  "High CPU interrupt rates affecting system performance",
+    "detectionScript":  "Detect-CPUInterrupt.ps1",
+    "priority":  "CRITICAL",
+    "triggerName":  "CPU-Interrupt"
+}

@@ -1,0 +1,196 @@
+﻿{
+    "triggers":  {
+                     "Thread-Count":  {
+                                          "ImpactPercentage":  35,
+                                          "Description":  "High thread count affecting system performance",
+                                          "RemediationScript":  "Fix-ThreadCount.ps1",
+                                          "SystemsAffected":  362,
+                                          "Priority":  "HIGH",
+                                          "DetectionScript":  "Detect-ThreadCount.ps1"
+                                      },
+                     "Registry-Issues":  {
+                                             "ImpactPercentage":  8,
+                                             "Description":  "Windows Registry corruption and optimization",
+                                             "DetectionScript":  "Detect-RegistryIssues.ps1",
+                                             "RemediationScript":  "Fix-RegistryIssues.ps1",
+                                             "SystemsAffected":  180,
+                                             "Priority":  "MEDIUM",
+                                             "ExistingScript":  "Fix-RegistryIssues.ps1"
+                                         },
+                     "CPU-Interrupt":  {
+                                           "ImpactPercentage":  82,
+                                           "Description":  "High CPU interrupt rates affecting system performance",
+                                           "DetectionScript":  "Detect-CPUInterrupt.ps1",
+                                           "RemediationScript":  "Fix-CPUInterrupt.ps1",
+                                           "SystemsAffected":  1857,
+                                           "Priority":  "CRITICAL",
+                                           "ExistingScript":  "Fix-CPUInterrupts.ps1"
+                                       },
+                     "DNS-Resolution-Issues":  {
+                                                   "ImpactPercentage":  13,
+                                                   "Description":  "DNS resolution failures and slow lookups",
+                                                   "DetectionScript":  "Detect-DNSResolutionIssues.ps1",
+                                                   "RemediationScript":  "Fix-DNSResolutionIssues.ps1",
+                                                   "SystemsAffected":  300,
+                                                   "Priority":  "MEDIUM",
+                                                   "ExistingScript":  "Fix-DNSResolution.ps1"
+                                               },
+                     "Slow-Boot-Issues":  {
+                                              "ImpactPercentage":  9,
+                                              "Description":  "Slow system startup and boot optimization",
+                                              "DetectionScript":  "Detect-SlowBootIssues.ps1",
+                                              "RemediationScript":  "Fix-SlowBootIssues.ps1",
+                                              "SystemsAffected":  200,
+                                              "Priority":  "MEDIUM",
+                                              "ExistingScript":  "Fix-SlowBootup.ps1"
+                                          },
+                     "Office-Application-Issues":  {
+                                                       "ImpactPercentage":  13,
+                                                       "Description":  "Microsoft Office application crashes and performance",
+                                                       "DetectionScript":  "Detect-OfficeApplicationIssues.ps1",
+                                                       "RemediationScript":  "Fix-OfficeApplicationIssues.ps1",
+                                                       "SystemsAffected":  300,
+                                                       "Priority":  "MEDIUM",
+                                                       "ExistingScript":  "Fix-OfficeApplications.ps1"
+                                                   },
+                     "System-On-Weekend-Unused":  {
+                                                      "ImpactPercentage":  83,
+                                                      "Description":  "Systems powered on during weekends with no user activity",
+                                                      "RemediationScript":  "Fix-SystemOnWeekendUnused.ps1",
+                                                      "SystemsAffected":  867,
+                                                      "Priority":  "MEDIUM",
+                                                      "DetectionScript":  "Detect-SystemOnWeekendUnused.ps1"
+                                                  },
+                     "Health-Score-Issues":  {
+                                                 "ImpactPercentage":  22,
+                                                 "Description":  "Systems with poor health scores requiring intervention",
+                                                 "RemediationScript":  "Fix-HealthScoreIssues.ps1",
+                                                 "SystemsAffected":  232,
+                                                 "Priority":  "HIGH",
+                                                 "DetectionScript":  "Detect-HealthScoreIssues.ps1"
+                                             },
+                     "Network-Adapter-Issues":  {
+                                                    "ImpactPercentage":  11,
+                                                    "Description":  "Network adapter driver and configuration issues",
+                                                    "DetectionScript":  "Detect-NetworkAdapterIssues.ps1",
+                                                    "RemediationScript":  "Fix-NetworkAdapterIssues.ps1",
+                                                    "SystemsAffected":  250,
+                                                    "Priority":  "MEDIUM",
+                                                    "ExistingScript":  "Fix-NetworkAdapters.ps1"
+                                                },
+                     "Windows-Update-Issues":  {
+                                                   "ImpactPercentage":  7,
+                                                   "Description":  "Windows Update service failures and installation issues",
+                                                   "DetectionScript":  "Detect-WindowsUpdateIssues.ps1",
+                                                   "RemediationScript":  "Fix-WindowsUpdateIssues.ps1",
+                                                   "SystemsAffected":  150,
+                                                   "Priority":  "MEDIUM",
+                                                   "ExistingScript":  "Fix-WindowsUpdate.ps1"
+                                               },
+                     "Browser-Performance-Issues":  {
+                                                        "ImpactPercentage":  11,
+                                                        "Description":  "Web browser crashes, hangs, and performance issues",
+                                                        "DetectionScript":  "Detect-BrowserPerformanceIssues.ps1",
+                                                        "RemediationScript":  "Fix-BrowserPerformanceIssues.ps1",
+                                                        "SystemsAffected":  250,
+                                                        "Priority":  "MEDIUM",
+                                                        "ExistingScript":  "Fix-BrowserIssues.ps1"
+                                                    },
+                     "Cisco-AnyConnect-Adapter":  {
+                                                      "ImpactPercentage":  52,
+                                                      "Description":  "Cisco AnyConnect virtual miniport adapter issues",
+                                                      "DetectionScript":  "Detect-CiscoAnyConnectAdapter.ps1",
+                                                      "RemediationScript":  "Fix-CiscoAnyConnectAdapter.ps1",
+                                                      "SystemsAffected":  1177,
+                                                      "Priority":  "HIGH",
+                                                      "ExistingScript":  "Repair-AnyConnectAdapter.ps1"
+                                                  },
+                     "Non-Paged-Pool-Leak-sensendr":  {
+                                                          "ImpactPercentage":  42,
+                                                          "Description":  "Non-paged pool memory leak in sensendr.exe process",
+                                                          "RemediationScript":  "Fix-NonPagedPoolLeakSensendr.ps1",
+                                                          "SystemsAffected":  436,
+                                                          "Priority":  "CRITICAL",
+                                                          "DetectionScript":  "Detect-NonPagedPoolLeakSensendr.ps1"
+                                                      },
+                     "Disk-Performance-Issues":  {
+                                                     "ImpactPercentage":  9,
+                                                     "Description":  "Disk I/O performance and space issues",
+                                                     "DetectionScript":  "Detect-DiskPerformanceIssues.ps1",
+                                                     "RemediationScript":  "Fix-DiskPerformanceIssues.ps1",
+                                                     "SystemsAffected":  200,
+                                                     "Priority":  "MEDIUM",
+                                                     "ExistingScript":  "Fix-DiskPerformance.ps1"
+                                                 },
+                     "Printer-Issues":  {
+                                            "ImpactPercentage":  5,
+                                            "Description":  "Printer driver and spooler service issues",
+                                            "DetectionScript":  "Detect-PrinterIssues.ps1",
+                                            "RemediationScript":  "Fix-PrinterIssues.ps1",
+                                            "SystemsAffected":  120,
+                                            "Priority":  "LOW",
+                                            "ExistingScript":  "Fix-PrinterIssues.ps1"
+                                        },
+                     "Azure-AD-Password-Expiration":  {
+                                                          "ImpactPercentage":  47,
+                                                          "Description":  "Azure AD password expiration notifications and management",
+                                                          "DetectionScript":  "Detect-AzureADPasswordExpiration.ps1",
+                                                          "RemediationScript":  "Fix-AzureADPasswordExpiration.ps1",
+                                                          "SystemsAffected":  1062,
+                                                          "Priority":  "HIGH",
+                                                          "ExistingScript":  "Fix-AzureADPasswordExpiration.ps1"
+                                                      },
+                     "Default-Gateway-Latency-Remote":  {
+                                                            "ImpactPercentage":  34,
+                                                            "Description":  "High latency to default gateway affecting network performance",
+                                                            "RemediationScript":  "Fix-DefaultGatewayLatencyRemote.ps1",
+                                                            "SystemsAffected":  352,
+                                                            "Priority":  "HIGH",
+                                                            "DetectionScript":  "Detect-DefaultGatewayLatencyRemote.ps1"
+                                                        },
+                     "SysTrack-Agent-Issues":  {
+                                                   "ImpactPercentage":  3,
+                                                   "Description":  "SysTrack agent service and communication issues",
+                                                   "DetectionScript":  "Detect-SysTrackAgentIssues.ps1",
+                                                   "RemediationScript":  "Fix-SysTrackAgentIssues.ps1",
+                                                   "SystemsAffected":  70,
+                                                   "Priority":  "CRITICAL",
+                                                   "ExistingScript":  "systrack-agent-repair.ps1"
+                                               },
+                     "Audio-Device-Issues":  {
+                                                 "ImpactPercentage":  4,
+                                                 "Description":  "Audio device driver and service issues",
+                                                 "DetectionScript":  "Detect-AudioDeviceIssues.ps1",
+                                                 "RemediationScript":  "Fix-AudioDeviceIssues.ps1",
+                                                 "SystemsAffected":  100,
+                                                 "Priority":  "LOW",
+                                                 "ExistingScript":  "Fix-AudioDevices.ps1"
+                                             },
+                     "Memory-Leaks":  {
+                                          "ImpactPercentage":  22,
+                                          "Description":  "Memory leaks across various processes",
+                                          "DetectionScript":  "Detect-MemoryLeaks.ps1",
+                                          "RemediationScript":  "Fix-MemoryLeaks.ps1",
+                                          "SystemsAffected":  500,
+                                          "Priority":  "HIGH",
+                                          "ExistingScript":  "Fix-MemoryLeaks.ps1"
+                                      },
+                     "High-CPU-Usage":  {
+                                            "ImpactPercentage":  18,
+                                            "Description":  "Sustained high CPU usage patterns",
+                                            "DetectionScript":  "Detect-HighCPUUsage.ps1",
+                                            "RemediationScript":  "Fix-HighCPUUsage.ps1",
+                                            "SystemsAffected":  400,
+                                            "Priority":  "HIGH",
+                                            "ExistingScript":  "Fix-HighCPUUsage.ps1"
+                                        }
+                 },
+    "lastUpdated":  "2025-06-30 23:03:48",
+    "totalTriggers":  21,
+    "priorityCounts":  {
+                           "LOW":  2,
+                           "CRITICAL":  3,
+                           "MEDIUM":  9,
+                           "HIGH":  7
+                       }
+}

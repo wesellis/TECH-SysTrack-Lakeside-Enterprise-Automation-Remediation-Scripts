@@ -1,0 +1,15 @@
+{
+  "triggerName": "Windows-Defender-Signature-Failed",
+  "description": "Windows Defender signature update failure leaving systems vulnerable", 
+  "priority": "CRITICAL",
+  "systemsAffected": 35,
+  "impactPercentage": 85,
+  "templateType": "Security",
+  "detectionScript": "Detect-WindowsDefenderSignatureFailed.ps1", 
+  "remediationScript": "Fix-WindowsDefenderSignatureFailed.ps1",
+  "created": "2025-07-01 12:34:00",
+  "version": "1.0", 
+  "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+  "businessImpact": "Malware protection compromised",
+  "securityArea": "Antivirus Protection"
+}

@@ -1,0 +1,11 @@
+﻿{
+    "impactPercentage":  35,
+    "systemsAffected":  362,
+    "remediationScript":  "Fix-ThreadCount.ps1",
+    "hasExistingScript":  false,
+    "lastUpdated":  "2025-06-30",
+    "description":  "High thread count affecting system performance",
+    "detectionScript":  "Detect-ThreadCount.ps1",
+    "priority":  "HIGH",
+    "triggerName":  "Thread-Count"
+}

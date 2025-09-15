@@ -1,0 +1,32 @@
+{
+    "triggerName": "Netlogon-Service-Stopped",
+    "description": "Netlogon service failure preventing domain authentication",
+    "priority": "CRITICAL",
+    "systemsAffected": 25,
+    "impactPercentage": 90,
+    "templateType": "Service",
+    "detectionScript": "Detect-NetlogonServiceStopped.ps1",
+    "remediationScript": "Fix-NetlogonServiceStopped.ps1",
+    "created": "2025-07-01 12:00:00",
+    "version": "1.0",
+    "author": "Wesley Ellis (Wesley.Ellis@compucom.com)",
+    "businessImpact": {
+        "category": "Authentication",
+        "severity": "Critical",
+        "affectedServices": ["Domain Authentication", "Group Policy", "Kerberos"],
+        "downtime": "High",
+        "userImpact": "Cannot authenticate to domain resources"
+    },
+    "technicalDetails": {
+        "targetServices": ["Netlogon", "NtLmSsp", "KDC", "DFSR"],
+        "diagnosticChecks": ["Service Status", "Domain Connectivity", "Secure Channel"],
+        "remediationActions": ["Service Restart", "Secure Channel Reset", "Time Sync", "Kerberos Clear"],
+        "validationTests": ["Domain Auth Test", "Service Status Check"]
+    },
+    "deployment": {
+        "testingRequired": true,
+        "rollbackPlan": "Service state backup and restore",
+        "monitoringDuration": "24 hours",
+        "successCriteria": "Domain authentication functional"
+    }
+}
