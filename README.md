@@ -228,3 +228,21 @@ MIT License - See LICENSE file for details.
 ---
 
 **Note**: These scripts are provided as-is for IT automation purposes. Test thoroughly in a non-production environment before deploying to production systems. Always follow your organization's change management procedures.
+
+---
+
+## Project Status & Roadmap
+
+**Completion: ~75%**
+
+### What Works
+- ✅ Remediation scripts for common system issues
+- ✅ Performance monitoring automation
+- ✅ Endpoint management scripts
+- ✅ Alert integration capabilities
+- ✅ Report generation tools
+
+### Current Status
+Functional PowerShell automation for SysTrack/Lakeside Software operations. Scripts handle remediation, monitoring, and endpoint management effectively.
+
+**Note**: Works for SysTrack digital experience monitoring automation.
