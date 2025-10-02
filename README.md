@@ -1,26 +1,26 @@
-# 🖥️ SysTrack Enterprise Automation & Remediation Scripts
-### Lakeside Software Integration for IT Operations
+# SysTrack Enterprise Automation & Remediation Scripts
 
 [![PowerShell](https://img.shields.io/badge/PowerShell-7.0+-5391FE?style=for-the-badge&logo=powershell)](https://docs.microsoft.com/powershell/)
 [![SysTrack](https://img.shields.io/badge/SysTrack-10.0+-00A4EF?style=for-the-badge)](https://www.lakesidesoftware.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## 🎯 Overview
+## Overview
 
-Collection of PowerShell scripts for automating SysTrack/Lakeside Software operations. Automate remediation, extract performance data, and manage endpoints at scale. Designed for IT teams using SysTrack for digital experience monitoring.
+A collection of PowerShell scripts for automating SysTrack/Lakeside Software operations. These scripts help with remediation tasks, performance data extraction, and endpoint management for IT teams using SysTrack for digital experience monitoring.
 
-### 📊 What These Scripts Do
+## Features
 
-- **Automated Remediation** - Fix common issues automatically
-- **Performance Monitoring** - Extract and analyze metrics
+- **Automated Remediation** - Scripts to fix common system issues
+- **Performance Monitoring** - Extract and analyze metrics from SysTrack
 - **Endpoint Management** - Bulk operations on devices
 - **Report Generation** - Custom reports from SysTrack data
 - **Alert Integration** - Connect to ticketing systems
 - **Health Checks** - Proactive system maintenance
 
-## 💡 Key Scripts
+## Key Scripts
 
 ### Remediation Scripts
+
 ```powershell
 # Auto-fix high CPU usage
 .\Remediate-HighCPU.ps1 -Threshold 90 -Action "RestartService"
@@ -33,6 +33,7 @@ Collection of PowerShell scripts for automating SysTrack/Lakeside Software opera
 ```
 
 ### Data Collection
+
 ```powershell
 # Get performance metrics
 Get-SysTrackMetrics -Computer $computerName -Days 7 |
@@ -47,6 +48,7 @@ Get-SysTrackInventory | Export-Excel "inventory.xlsx"
 ```
 
 ### Automated Actions
+
 ```powershell
 # Restart services based on SysTrack alerts
 Watch-SysTrackAlerts -Type "ServiceDown" -Action {
@@ -60,7 +62,7 @@ Get-OutdatedSoftware | Update-SoftwarePackage -Silent
 Get-SystemsNeedingReboot | Restart-Computer -Wait
 ```
 
-## ⚡ Quick Start
+## Quick Start
 
 ```powershell
 # Import SysTrack module
@@ -73,7 +75,7 @@ Connect-SysTrack -Server "systrack.company.com" -Credential (Get-Credential)
 Start-AutoRemediation -Scope "AllSystems"
 ```
 
-## 🛠️ Script Categories
+## Script Categories
 
 ### Performance
 - `Fix-HighMemory.ps1` - Memory leak remediation
@@ -110,39 +112,10 @@ Start-AutoRemediation -Scope "AllSystems"
 - `Create-ExecutiveReport.ps1` - Executive summaries
 - `Export-Compliance.ps1` - Compliance reports
 
-## 📈 Features
-
-### Alert-Based Automation
-```powershell
-# Configure auto-remediation rules
-New-RemediationRule -Trigger "DiskSpace < 5%" `
-                   -Action "Clear-TempFiles" `
-                   -Notify "it-team@company.com"
-```
-
-### Scheduled Tasks
-```powershell
-# Schedule daily health checks
-Schedule-SysTrackTask -Script "HealthCheck.ps1" `
-                     -Time "06:00" `
-                     -Recurrence Daily
-```
-
-### Integration Examples
-```powershell
-# ServiceNow integration
-Send-ToServiceNow -Alert $sysTrackAlert `
-                 -Priority "High" `
-                 -AssignmentGroup "Desktop Support"
-
-# Email notifications
-Send-RemediationReport -Recipients "managers@company.com" `
-                      -IncludeMetrics
-```
-
-## 🔧 Configuration
+## Configuration
 
 ### Settings File
+
 ```json
 {
   "SysTrackServer": "systrack.company.com",
@@ -156,7 +129,39 @@ Send-RemediationReport -Recipients "managers@company.com" `
 }
 ```
 
+### Alert-Based Automation
+
+```powershell
+# Configure auto-remediation rules
+New-RemediationRule -Trigger "DiskSpace < 5%" `
+                   -Action "Clear-TempFiles" `
+                   -Notify "it-team@company.com"
+```
+
+### Scheduled Tasks
+
+```powershell
+# Schedule daily health checks
+Schedule-SysTrackTask -Script "HealthCheck.ps1" `
+                     -Time "06:00" `
+                     -Recurrence Daily
+```
+
+### Integration Examples
+
+```powershell
+# ServiceNow integration
+Send-ToServiceNow -Alert $sysTrackAlert `
+                 -Priority "High" `
+                 -AssignmentGroup "Desktop Support"
+
+# Email notifications
+Send-RemediationReport -Recipients "managers@company.com" `
+                      -IncludeMetrics
+```
+
 ### Custom Remediation
+
 ```powershell
 # Define custom remediation
 function Invoke-CustomFix {
@@ -170,9 +175,10 @@ function Invoke-CustomFix {
 }
 ```
 
-## 📊 Monitoring Dashboard
+## Monitoring Dashboard
 
 Scripts include dashboard generators:
+
 ```powershell
 # Generate HTML dashboard
 New-SysTrackDashboard -OutputPath "C:\Dashboards" `
@@ -180,7 +186,7 @@ New-SysTrackDashboard -OutputPath "C:\Dashboards" `
                      -Metrics @("CPU","Memory","Disk","Network")
 ```
 
-## 🔒 Security
+## Security
 
 - **Credential Management** - Secure storage
 - **Audit Logging** - All actions logged
@@ -188,7 +194,7 @@ New-SysTrackDashboard -OutputPath "C:\Dashboards" `
 - **Encrypted Connections** - Secure communications
 - **Change Control** - Approval workflows
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -197,29 +203,28 @@ New-SysTrackDashboard -OutputPath "C:\Dashboards" `
 | Script timeout | Increase timeout values |
 | Remediation failed | Check error logs in Event Viewer |
 
-## 📚 Documentation
+## Documentation
 
 - [SysTrack API Reference](docs/api-reference.md)
 - [Remediation Guide](docs/remediation-guide.md)
 - [Best Practices](docs/best-practices.md)
 - [Troubleshooting](docs/troubleshooting.md)
 
-## 🤝 Contributing
+## Requirements
 
-Share your SysTrack automation scripts!
+- PowerShell 7.0 or higher
+- SysTrack 10.0 or higher
+- Appropriate permissions for remediation actions
+- Network access to SysTrack server
 
-## 📜 License
+## Contributing
 
-MIT License - Free for all use
+Contributions are welcome. Please follow PowerShell best practices and include appropriate documentation for new scripts.
+
+## License
+
+MIT License - See LICENSE file for details.
 
 ---
 
-<div align="center">
-
-**Automate IT Operations with SysTrack**
-
-[![Download](https://img.shields.io/badge/Download-Scripts-brightgreen?style=for-the-badge)](https://github.com/yourusername/systrack-automation/releases)
-
-*Free • Open Source • Production Ready*
-
-</div>
+**Note**: These scripts are provided as-is for IT automation purposes. Test thoroughly in a non-production environment before deploying to production systems. Always follow your organization's change management procedures.

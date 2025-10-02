@@ -28,3 +28,16 @@ Desktop.ini
 # Test results
 TestResults/
 coverage/
+
+# Project tracking and review files
+PROJECT-TRACKER.md
+*REVIEW*.md
+*CHECKLIST*.md
+Fix-*.ps1
+Setup-*-Fixed.ps1
+Analyze-*.ps1
+
+# OS files
+$RECYCLE.BIN/
+.DS_Store
+ehthumbs.db
