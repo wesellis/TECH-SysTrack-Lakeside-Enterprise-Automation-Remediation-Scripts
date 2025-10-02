@@ -1,0 +1,186 @@
+{
+  "environment": "production",
+  "description": "Production SysTrack automation configuration - Copy to production.json and customize",
+
+  "systrack": {
+    "api_url": "https://systrack.company.com/api",
+    "api_key": "YOUR_API_KEY_HERE",
+    "polling_interval_seconds": 300,
+    "timeout_seconds": 30,
+    "retry_attempts": 3
+  },
+
+  "azure_ad": {
+    "tenant_id": "YOUR_TENANT_ID",
+    "client_id": "YOUR_CLIENT_ID",
+    "client_secret": "YOUR_CLIENT_SECRET",
+    "authority": "https://login.microsoftonline.com"
+  },
+
+  "automation": {
+    "enable_automatic_remediation": false,
+    "max_concurrent_jobs": 5,
+    "default_timeout_minutes": 30,
+    "retry_failed_jobs": true,
+    "max_retries": 2,
+    "require_approval": true,
+    "approval_email": "it-manager@company.com"
+  },
+
+  "notifications": {
+    "email_enabled": true,
+    "smtp_server": "smtp.company.com",
+    "smtp_port": 587,
+    "smtp_use_ssl": true,
+    "smtp_from": "systrack-automation@company.com",
+    "smtp_to": "it-alerts@company.com",
+
+    "teams_enabled": true,
+    "teams_webhook": "https://outlook.office.com/webhook/...",
+
+    "servicenow_enabled": false,
+    "servicenow_url": "https://company.service-now.com",
+    "servicenow_api_key": "YOUR_SERVICENOW_KEY"
+  },
+
+  "thresholds": {
+    "cpu_usage_warning": 80,
+    "cpu_usage_critical": 90,
+    "cpu_interrupt_warning": 10,
+    "cpu_interrupt_critical": 15,
+
+    "memory_usage_warning": 85,
+    "memory_usage_critical": 95,
+    "memory_leak_mb": 500,
+
+    "disk_space_warning_percent": 15,
+    "disk_space_critical_percent": 5,
+    "disk_space_warning_gb": 20,
+    "disk_space_critical_gb": 5,
+
+    "network_latency_ms": 100,
+    "packet_loss_percent": 5,
+
+    "response_time_seconds": 300,
+    "boot_time_minutes": 5
+  },
+
+  "remediation_rules": [
+    {
+      "name": "High CPU Auto-Fix",
+      "enabled": true,
+      "trigger": "CPU > 90%",
+      "action": "Fix-HighCPUUsage",
+      "parameters": { "Threshold": 90 },
+      "notify": true,
+      "require_approval": false
+    },
+    {
+      "name": "Memory Leak Detection",
+      "enabled": true,
+      "trigger": "MemoryLeak > 500MB",
+      "action": "Fix-MemoryLeaks",
+      "parameters": {},
+      "notify": true,
+      "require_approval": true
+    },
+    {
+      "name": "Network Adapter Issues",
+      "enabled": true,
+      "trigger": "NetworkDown OR HighLatency",
+      "action": "Fix-NetworkAdapters",
+      "parameters": {},
+      "notify": true,
+      "require_approval": false
+    },
+    {
+      "name": "Low Disk Space",
+      "enabled": true,
+      "trigger": "DiskSpace < 5%",
+      "action": "Clear-TempFiles",
+      "parameters": { "MinFreeGB": 10 },
+      "notify": true,
+      "require_approval": false
+    }
+  ],
+
+  "scheduled_tasks": [
+    {
+      "name": "Daily Health Check",
+      "enabled": true,
+      "script": "Run-HealthCheck.ps1",
+      "schedule": "Daily",
+      "time": "06:00",
+      "timezone": "Eastern Standard Time"
+    },
+    {
+      "name": "Weekly System Cleanup",
+      "enabled": true,
+      "script": "Weekly-Maintenance.ps1",
+      "schedule": "Weekly",
+      "day_of_week": "Sunday",
+      "time": "02:00"
+    },
+    {
+      "name": "Monthly Reporting",
+      "enabled": true,
+      "script": "Generate-MonthlyReport.ps1",
+      "schedule": "Monthly",
+      "day_of_month": 1,
+      "time": "08:00"
+    }
+  ],
+
+  "logging": {
+    "enabled": true,
+    "log_path": "./logs",
+    "log_level": "Info",
+    "max_log_size_mb": 100,
+    "max_log_files": 10,
+    "log_to_systrack": true,
+    "log_to_eventviewer": true
+  },
+
+  "security": {
+    "encrypt_credentials": true,
+    "use_secure_strings": true,
+    "audit_all_actions": true,
+    "require_mfa": false,
+    "allowed_ip_ranges": ["10.0.0.0/8", "172.16.0.0/12"]
+  },
+
+  "integrations": {
+    "servicenow": {
+      "enabled": false,
+      "instance": "company.service-now.com",
+      "api_key": "YOUR_KEY",
+      "assignment_group": "Desktop Support",
+      "priority_mapping": {
+        "critical": "1 - Critical",
+        "high": "2 - High",
+        "medium": "3 - Medium",
+        "low": "4 - Low"
+      }
+    },
+
+    "teams": {
+      "enabled": true,
+      "webhook_url": "YOUR_WEBHOOK",
+      "mention_on_critical": true,
+      "mention_users": ["user1@company.com"]
+    },
+
+    "sccm": {
+      "enabled": false,
+      "server": "sccm.company.com",
+      "site_code": "ABC"
+    }
+  },
+
+  "scopes": {
+    "target_computers": ["*"],
+    "exclude_computers": ["DC-*", "SQL-*"],
+    "target_departments": ["Finance", "HR", "Sales"],
+    "target_locations": ["New York", "London", "Tokyo"]
+  }
+}
